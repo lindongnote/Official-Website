@@ -1,0 +1,121 @@
+{
+  "nav": {
+    "home": "主頁",
+    "about": "關於",
+    "contact": "聯絡我們"
+  },
+  "home": {
+    "hero": {
+      "title": "歡迎嚟到霖冬筆記運營團隊",
+      "subtitle": "一個專注於學習筆記同學習方法分享嘅專業團隊"
+    },
+    "features": {
+      "feature1": {
+        "title": "專業內容",
+        "description": "由多位學霸製作嘅優質內容"
+      },
+      "feature2": {
+        "title": "教學支援",
+        "description": "為學習者提供全面嘅筆記支援"
+      },
+      "feature3": {
+        "title": "持續更新",
+        "description": "歡迎大家嚟投稿"
+      },
+      "feature4": {
+        "title": "社群交流",
+        "description": "創建咗QQ群，有咩事群入面講"
+      }
+    },
+    "cta": {
+      "title": "加入我哋嘅團隊",
+      "description": "同我哋一齊向前進步",
+      "button": "立即加入"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "關於我哋",
+      "subtitle": "一個專注於學習筆記同學習方法分享嘅專業團隊"
+    },
+    "mission": {
+      "title": "故事",
+      "description": "霖冬筆記創立於2023年10月6日，由兩位網上認識嘅初中生共同創立，致力於為學生提供高質素嘅學習資源同方法指導，幫助每一位學習者實現自己嘅目標，本項目搁置咗一年多，直到2025年1月25日被冬瓜（Cherry）提起，並於2025年1月28日正式上線。"
+    },
+    "values": {
+        "title": "我哋嘅價值觀",
+        "innovation": {
+          "title": "創新",
+          "description": "不斷探索新嘅學習方法同教學模式"
+        },
+        "collaboration": {
+          "title": "協作",
+          "description": "團隊協作，共同成長"
+        },
+        "excellence": {
+          "title": "卓越",
+          "description": "追求卓越嘅教學質量同學習效果"
+        },
+        "growth": {
+          "title": "成長",
+          "description": "促進每個人嘅持續進步同發展"
+        }
+      },
+      "team": {
+        "title": "我哋嘅團隊",
+        "roles": {
+          "founder": "創辦人",
+          "cofounder": "共同創辦人",
+          "developer": "開發者"
+        },
+        "bios": {
+          "founder": "霖冬筆記嘅創辦人，係個Programer，鍾意可愛嘅嘢",
+          "cofounder": "共同創辦人，負責團隊運營同內容策劃。擅長摸魚",
+          "developer": "網站開發者，負責技術架構同功能實現。精通前後端開發，致力於打造流暢嘅用戶體驗同穩定嘅系統架構。"
+        }
+      }
+    },
+  "contact": {
+    "hero": {
+      "title": "聯絡我們",
+      "subtitle": "我哋好期待聽到你嘅意見"
+    },
+    "form": {
+      "title": "發送訊息",
+      "name": "姓名",
+      "namePlaceholder": "請輸入你嘅姓名",
+      "email": "電郵地址",
+      "emailPlaceholder": "請輸入你嘅電郵地址",
+      "subject": "主題",
+      "subjectPlaceholder": "請輸入訊息主題",
+      "message": "訊息內容",
+      "messagePlaceholder": "請輸入你嘅訊息內容",
+      "submit": "發送訊息",
+      "submitting": "發送緊...",
+      "success": "訊息發送成功！",
+      "error": "發送失敗，請稍後再試"
+    },
+    "info": {
+      "title": "聯絡方式",
+      "email": "電郵地址",
+      "qq": "QQ群",
+      "address": "地址",
+      "addressDetail": "中國"
+    }
+  },
+  "footer": {
+    "copyright": "{year} 霖冬筆記運營團隊. 保留所有權利",
+    "navigation": {
+      "title": "快速導航",
+      "home": "主頁",
+      "about": "關於我哋",
+      "contact": "聯絡我們"
+    },
+    "social": {
+      "title": "社交媒體",
+      "qq": "QQ群",
+      "github": "GitHub",
+      "email": "聯絡電郵"
+    }
+  }
+}

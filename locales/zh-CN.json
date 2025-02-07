@@ -1,0 +1,121 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于",
+    "contact": "联系我们"
+  },
+  "home": {
+    "hero": {
+      "title": "欢迎来到霖冬笔记运营团队",
+      "subtitle": "一个专注于学习笔记和学习方法分享的专业团队"
+    },
+    "features": {
+      "feature1": {
+        "title": "专业内容",
+        "description": "由多位学霸制作的优质内容"
+      },
+      "feature2": {
+        "title": "教学支持",
+        "description": "为学习者提供全面的笔记支持"
+      },
+      "feature3": {
+        "title": "持续更新",
+        "description": "欢迎大家来投稿"
+      },
+      "feature4": {
+        "title": "社群交流",
+        "description": "创建了QQ群有什么事群里说"
+      }
+    },
+    "cta": {
+      "title": "加入我们的团队",
+      "description": "与我们一起向前进步",
+      "button": "立即加入"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "关于我们",
+      "subtitle": "一个专注于学习笔记和学习方法分享的专业团队"
+    },
+    "mission": {
+      "title": "故事",
+      "description": "霖冬笔记创立于2023年10月6日，由两位网上认识的初中生共同创立，致力于为学生提供高质量的学习资源和方法指导，帮助每一位学习者实现自己的目标，本项目搁置了一年多，直到2025年1月25日被冬瓜（Cherry）提起来，并于2025年1月28日正式上线。"
+    },
+    "values": {
+      "title": "我们的价值观",
+      "innovation": {
+        "title": "创新",
+        "description": "不断探索新的学习方法和教学模式"
+      },
+      "collaboration": {
+        "title": "协作",
+        "description": "团队协作，共同成长"
+      },
+      "excellence": {
+        "title": "卓越",
+        "description": "追求卓越的教学质量和学习效果"
+      },
+      "growth": {
+        "title": "成长",
+        "description": "促进每个人的持续进步和发展"
+      }
+    },
+    "team": {
+      "title": "我们的团队",
+      "roles": {
+        "founder": "创始人",
+        "cofounder": "共同创始人",
+        "developer": "开发者"
+      },
+      "bios": {
+        "founder": "霖冬笔记的创始人，是个Programer，喜欢可可爱爱的东西",
+        "cofounder": "共同创始人，负责团队运营和内容策划。擅长摸鱼",
+        "developer": "网站开发者，负责技术架构和功能实现。精通前后端开发，致力于打造流畅的用户体验和稳定的系统架构。"
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "联系我们",
+      "subtitle": "我们期待听到您的声音"
+    },
+    "form": {
+      "title": "发送消息",
+      "name": "姓名",
+      "namePlaceholder": "请输入您的姓名",
+      "email": "电子邮箱",
+      "emailPlaceholder": "请输入您的电子邮箱",
+      "subject": "主题",
+      "subjectPlaceholder": "请输入消息主题",
+      "message": "消息内容",
+      "messagePlaceholder": "请输入您的消息内容",
+      "submit": "发送消息",
+      "submitting": "发送中...",
+      "success": "消息发送成功！",
+      "error": "发送失败，请稍后重试"
+    },
+    "info": {
+      "title": "联系方式",
+      "email": "电子邮箱",
+      "qq": "QQ群",
+      "address": "地址",
+      "addressDetail": "中国"
+    }
+  },
+  "footer": {
+    "copyright": " {year} 霖冬笔记运营团队. 保留所有权利",
+    "navigation": {
+      "title": "快速导航",
+      "home": "首页",
+      "about": "关于我们",
+      "contact": "联系我们"
+    },
+    "social": {
+      "title": "社交媒体",
+      "qq": "QQ群",
+      "github": "GitHub",
+      "email": "联系邮箱"
+    }
+  }
+}
