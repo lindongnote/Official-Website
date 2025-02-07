@@ -27,10 +27,15 @@
 import { useHead } from '@unhead/vue'
 import { useI18n } from 'vue-i18n' // 确保导入正确的模块路径
 
-const { t } = useI18n()
+const { t , locale} = useI18n()
 
 useHead({
-  title: t('home.page.title'),
+  title: locale.value === 'zh-CN' ? '霖冬笔记' :
+        locale.value === 'zh-HK' ? '霖冬筆記' :
+        locale.value === 'zh-MO' ? '霖冬筆記' :
+        locale.value === 'zh-TW' ? '霖冬筆記' :
+        '霖冬笔记'
+        
 })
 
 const features = [
