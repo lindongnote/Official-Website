@@ -24,9 +24,14 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
 import { useI18n } from 'vue-i18n' // 确保导入正确的模块路径
 
 const { t } = useI18n()
+
+useHead({
+  title: t('home.page.title'),
+})
 
 const features = [
   { key: 'feature1', icon: '🚀' },

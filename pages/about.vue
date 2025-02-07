@@ -55,8 +55,14 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { useHead } from '@unhead/vue'
 
 const { t } = useI18n()
+
+// 设置页面标题
+useHead({
+  title: t('about.page.title'),
+})
 
 const values = [
   {
