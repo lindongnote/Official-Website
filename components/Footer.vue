@@ -149,12 +149,70 @@ const currentYear = new Date().getFullYear()
 }
 
 @media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .footer-section {
     padding: 1rem 0;
+  }
+
+  .logo-container {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo {
+    height: 80px;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+
+  .social-link {
+    width: 32px;
+    height: 32px;
+  }
+
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-logo {
+    height: 60px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+  }
+
+  .footer-nav {
+    gap: 0.25rem;
   }
 }
 </style>
