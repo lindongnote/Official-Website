@@ -1,12 +1,22 @@
 <template>
   <header class="header">
+    <!-- 手机版汉堡包按钮 -->
+    <button 
+      class="hamburger-btn" 
+      @click="toggleNavMenu"
+      v-if="isMobile"
+    >
+      <span class="hamburger-icon"></span>
+    </button>
+
     <div class="logo">
       <NuxtLink to="/">
         <img src="/logo.png" alt="Logo" class="logo-image" />
       </NuxtLink>
     </div>
 
-    <nav class="nav-menu">
+    <!-- 电脑版导航菜单 -->
+    <nav class="nav-menu" v-if="!isMobile">
       <ul class="nav-list">
         <li class="nav-item">
           <NuxtLink to="/" class="nav-link">{{ t('nav.home') }}</NuxtLink>
@@ -16,6 +26,21 @@
           <NuxtLink to="/about" class="nav-link">{{ t('nav.about') }}</NuxtLink>
         </li>
         <li class="nav-separator">|</li>
+        <li class="nav-item">
+          <NuxtLink to="/contact" class="nav-link">{{ t('nav.contact') }}</NuxtLink>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 手机版导航菜单 -->
+    <nav class="nav-menu mobile-nav-menu" :class="{ 'mobile-menu-open': isNavMenuOpen }" v-if="isMobile">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <NuxtLink to="/" class="nav-link">{{ t('nav.home') }}</NuxtLink>
+        </li>
+        <li class="nav-item">
+          <NuxtLink to="/about" class="nav-link">{{ t('nav.about') }}</NuxtLink>
+        </li>
         <li class="nav-item">
           <NuxtLink to="/contact" class="nav-link">{{ t('nav.contact') }}</NuxtLink>
         </li>
@@ -57,13 +82,15 @@ import { useI18n } from 'vue-i18n'
 const { t, locale } = useI18n()
 
 const languages = [
-  { code: 'zh-CN', name: '简体中文（中国大陆）', emoji: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg' },
-  { code: 'zh-HK', name: '繁體廣東話（中國香港）', emoji: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ed-1f1f0.svg' },
-  { code: 'zh-MO', name: '繁體廣東話（中國澳門）', emoji: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f2-1f1f4.svg' },
-  { code: 'zh-TW', name: '繁體中文（中國台灣）', emoji: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg' },
+  { code: 'zh-CN', name: '简体中文(中国大陆)', emoji: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg' },
+  { code: 'zh-HK', name: '繁體廣東話(中國香港)', emoji: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ed-1f1f0.svg' },
+  { code: 'zh-MO', name: '繁體廣東話(中國澳門)', emoji: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f2-1f1f4.svg' },
+  { code: 'zh-TW', name: '繁體中文(中國台灣)', emoji: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg' },
 ]
 
 const isLanguageMenuOpen = ref(false)
+const isNavMenuOpen = ref(false)
+const isMobile = ref(false)
 
 // 获取浏览器首选语言
 const getBrowserLanguage = () => {
@@ -81,7 +108,7 @@ const getBrowserLanguage = () => {
         browserLang.toLowerCase().startsWith(lang.code.toLowerCase())
       )
 
-      // 如果找到匹配的语言，将其保存到本地存储
+      // 如果找到匹配的语言,将其保存到本地存储
       if (matchedLang) {
         localStorage.setItem('preferredLanguage', matchedLang.code)
         return matchedLang.code
@@ -105,6 +132,10 @@ const toggleLanguageMenu = () => {
   isLanguageMenuOpen.value = !isLanguageMenuOpen.value
 }
 
+const toggleNavMenu = () => {
+  isNavMenuOpen.value = !isNavMenuOpen.value
+}
+
 const selectLanguage = (code: string) => {
   locale.value = code
   isLanguageMenuOpen.value = false
@@ -113,9 +144,17 @@ const selectLanguage = (code: string) => {
   }
 }
 
+const handleResize = () => {
+  isMobile.value = window.innerWidth <= 768
+}
+
 onMounted(() => {
   // 初始化语言设置
   locale.value = getBrowserLanguage()
+
+  // 初始化检测移动设备
+  handleResize()
+  window.addEventListener('resize', handleResize)
 
   // 点击其他地方关闭语言菜单
   document.addEventListener('click', (event) => {
@@ -125,7 +164,6 @@ onMounted(() => {
     }
   })
 })
-
 </script>
 
 <style scoped>
@@ -272,5 +310,116 @@ onMounted(() => {
 
 .social-icon {
   font-size: 1.2rem;
+}
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger-icon {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: #333;
+  position: relative;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+}
+
+.hamburger-icon::before {
+  transform: translateY(-6px);
+}
+
+.hamburger-icon::after {
+  transform: translateY(6px);
+}
+
+.mobile-nav-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: none;
+}
+
+.mobile-menu-open {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .logo {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .nav-menu {
+    position: static;
+    transform: none;
+    background-color: rgba(245, 245, 245, 0.7);
+    padding: 0.6rem 0;
+    border-radius: 15px;
+    margin: 1rem 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+
+  .nav-separator {
+    display: none;
+  }
+
+  .right-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .language-selector {
+    width: 100%;
+  }
+
+  .language-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .hamburger-btn {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
 }
 </style>
