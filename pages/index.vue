@@ -18,12 +18,13 @@
     <section class="cta">
       <h2 class="cta-title">{{ t('home.cta.title') }}</h2>
       <p class="cta-description">{{ t('home.cta.description') }}</p>
-      <button class="cta-button">{{ t('home.cta.button') }}</button>
+      <button class="cta-button" @click="navigateToContact">{{ t('home.cta.button') }}</button>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import { useHead } from '@unhead/vue'
 import { useI18n } from 'vue-i18n' // 确保导入正确的模块路径
 
@@ -31,9 +32,9 @@ const { t , locale} = useI18n()
 
 useHead({
   title: locale.value === 'zh-CN' ? '霖冬笔记' :
-        locale.value === 'zh-HK' ? '霖冬筆記' :
-        locale.value === 'zh-MO' ? '霖冬筆記' :
-        locale.value === 'zh-TW' ? '霖冬筆記' :
+        locale.value === 'zh-HK' ? '霖冬笔记' :
+        locale.value === 'zh-MO' ? '霖冬笔记' :
+        locale.value === 'zh-TW' ? '霖冬笔记' :
         '霖冬笔记'
         
 })
@@ -44,6 +45,12 @@ const features = [
   { key: 'feature3', icon: '💡' },
   { key: 'feature4', icon: '🛠️' },
 ]
+
+const router = useRouter()
+
+const navigateToContact = () => {
+  router.push('/contact')
+}
 </script>
 
 <style scoped>
@@ -148,11 +155,19 @@ const features = [
   font-size: 1.125rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .cta-button:hover {
   background: #FFA0B4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+  background: #FF8DA1;
+  box-shadow: 0 2px 6px rgba(255, 182, 193, 0.2);
 }
 
 @keyframes fadeInUp {
