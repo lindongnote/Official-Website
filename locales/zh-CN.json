@@ -2,8 +2,67 @@
   "nav": {
     "home": "首页",
     "about": "关于",
-    "contact": "联系我们"
+    "contact": "联系我们",
+    "mindfulnessRoom": "心灵小屋"  
   },
+  "mindfulnessRoom": {
+    "page": {
+      "title": "心灵小屋｜霖冬笔记"
+    },
+    "hero": {
+      "title": "心灵小屋",
+      "subtitle": "在这里放松心情，找到内心的平静"
+    },
+    "sections": {
+      "meditation": {
+        "title": "冥想练习",
+        "description": "通过简单的冥想练习，让心灵得到片刻的宁静。在这里，您可以学习各种冥想技巧，找到属于自己的心灵空间。"
+      },
+      "articles": {
+        "title": "心理文章",
+        "description": "分享有关心理健康、情绪管理的专业文章。我们精心挑选了一系列实用的心理学知识，帮助您更好地了解自己。"
+      },
+      "community": {
+        "title": "心灵社区",
+        "description": "与志同道合的朋友交流，分享心路历程。在这个温暖的社区里，您可以找到倾听和理解，一起成长。"
+      }
+    },
+    "volunteers": {
+      "title": "我们的义工团队",
+      "description": "这里有一群温暖的心灵守护者，他们用专业的知识和真诚的态度，为每一位需要帮助的朋友提供支持。",
+      "members": {
+        "0": {
+          "name": "暂无",
+          "role": "未知",
+          "description": "暂无",
+          "qq": "#",
+          "wechat": "#"
+        },
+        "1": {
+          "name": "暂无",
+          "role": "未知",
+          "description": "暂无",
+          "qq": "#",
+          "wechat": "#"
+        },
+        "2": {
+          "name": "暂无",
+          "role": "未知",
+          "description": "暂无",
+          "qq": "#",
+          "wechat": "#"
+        }
+      }
+    },
+    "contact": {
+      "title": "联系我们",
+      "description": "如果您需要帮助或想要加入我们的义工团队，欢迎随时联系我们。",
+      "email": "mindfulness@lindong.com",
+      "qq": "心灵小屋交流群：123456789",
+      "wechat": "心灵小屋公众号：xinlingxiaowu"
+    }
+  },
+
   "home": {
     "pages": {
       "title": "霖冬笔记"
