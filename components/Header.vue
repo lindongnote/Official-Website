@@ -46,6 +46,9 @@
           <NuxtLink to="/about" class="nav-link">{{ t('nav.about') }}</NuxtLink>
         </li>
         <li class="nav-item">
+          <NuxtLink to="/mindfulness-room" class="nav-link">{{ t('nav.mindfulnessRoom') }}</NuxtLink>
+        </li>
+        <li class="nav-item">
           <NuxtLink to="/contact" class="nav-link">{{ t('nav.contact') }}</NuxtLink>
         </li>
       </ul>
