@@ -4,7 +4,7 @@ import zhMO from './locales/zh-MO.json';
 import zhTW from './locales/zh-TW.json';
 
 export default defineI18nConfig(() => ({
-    legacy: false,
+    legacy: true,
     messages: {
       'zh-CN': zhCN,
       'zh-HK': zhHK,
