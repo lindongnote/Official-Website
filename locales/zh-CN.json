@@ -57,7 +57,6 @@
     "contact": {
       "title": "联系我们",
       "description": "如果您有任何问题或建议，欢迎随时与我们联系",
-      "email": "psycho@ldnote.top",
       "copyButton": "复制邮箱",
       "copySuccess": "已复制到剪贴板！"
     }

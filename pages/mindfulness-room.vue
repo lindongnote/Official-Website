@@ -81,7 +81,7 @@
           <h2>{{ t('mindfulnessRoom.contact.title') }}</h2>
           <p>{{ t('mindfulnessRoom.contact.description') }}</p>
           <div class="email-box">
-            <span>{{ t('mindfulnessRoom.contact.email') }}</span>
+            <span>{{ t("psycho@ldnote.top") }}</span>
             <button @click="copyEmail" class="copy-button">
               <i class="fas fa-copy"></i>
             </button>
