@@ -130,7 +130,7 @@ import { ref } from 'vue'
 const showSuccess = ref(false)
 
 const copyEmail = () => {
-  navigator.clipboard.writeText(t('mindfulnessRoom.contact.email'))
+  navigator.clipboard.writeText(t('psycho@ldnote.top'))
   showSuccess.value = true
   setTimeout(() => {
     showSuccess.value = false
