@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n'],
   i18n: {
-    lazy: true,
+    lazy: false,
     strategy: 'prefix_and_default',
     vueI18n: './i18n.config.ts'
   },
