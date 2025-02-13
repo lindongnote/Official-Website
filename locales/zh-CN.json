@@ -56,10 +56,10 @@
     },
     "contact": {
       "title": "联系我们",
-      "description": "如果您需要帮助或想要加入我们的义工团队，欢迎随时联系我们。",
-      "email": "mindfulness@lindong.com",
-      "qq": "心灵小屋交流群：123456789",
-      "wechat": "心灵小屋公众号：xinlingxiaowu"
+      "description": "如果您有任何问题或建议，欢迎随时与我们联系",
+      "email": "psycho[at]ldnote.top",
+      "copyButton": "复制邮箱",
+      "copySuccess": "已复制到剪贴板！"
     }
   },
 

@@ -63,6 +63,35 @@
         </div>
       </div>
     </section>
+    <!-- ... 现有代码 ... -->
+
+    <!-- 添加联系邮箱部分 -->
+    <section class="contact-section" data-aos="fade-up">
+      <div class="contact-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#ffffff" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,192C384,181,480,139,576,128C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+        </svg>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-card" data-aos="fade-up">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h2>{{ t('mindfulnessRoom.contact.title') }}</h2>
+          <p>{{ t('mindfulnessRoom.contact.description') }}</p>
+          <div class="email-box">
+            <span>{{ t('mindfulnessRoom.contact.email') }}</span>
+            <button @click="copyEmail" class="copy-button">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+          <div class="success-message" :class="{ show: showSuccess }">
+            {{ t('mindfulnessRoom.contact.copySuccess') }}
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -75,14 +104,16 @@ import 'aos/dist/aos.css'
 
 const { t } = useI18n()
 
-useHead({
-  title: t('mindfulnessRoom.page.title'),
-  link: [
-    { 
-      rel: 'stylesheet', 
-      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' 
-    }
-  ]
+watchEffect(() => {
+  useHead({
+    title: t('mindfulnessRoom.page.title'),
+    link: [
+      { 
+        rel: 'stylesheet', 
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' 
+      }
+    ]
+  })
 })
 
 const volunteers = ['member1', 'member2', 'member3']
@@ -94,6 +125,17 @@ onMounted(() => {
     once: true
   })
 })
+import { ref } from 'vue'
+
+const showSuccess = ref(false)
+
+const copyEmail = () => {
+  navigator.clipboard.writeText(t('mindfulnessRoom.contact.email'))
+  showSuccess.value = true
+  setTimeout(() => {
+    showSuccess.value = false
+  }, 2000)
+}
 </script>
 
 <style scoped>
@@ -291,29 +333,143 @@ onMounted(() => {
   transform: translateY(-3px);
 }
 
+.contact-section {
+  position: relative;
+  background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  padding: 8rem 2rem 6rem;
+  margin-top: 4rem;
+  color: white;
+  overflow: hidden;
+}
+
+.contact-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.contact-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.contact-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.contact-card p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.email-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.email-box span {
+  font-size: 1.1rem;
+  color: white;
+}
+
+.copy-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.success-message {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.success-message.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
-  .hero-image {
-    height: 400px;
+  .contact-section {
+    padding: 6rem 1.5rem 4rem;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .content-section {
-    margin-top: -50px;
-  }
-
-  .section-card {
+  .contact-card {
     padding: 2rem;
   }
 
-  .volunteers-section {
-    padding: 4rem 2rem;
+  .email-box {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .copy-button {
+    width: 100%;
+    border-radius: 25px;
   }
 }
 </style>

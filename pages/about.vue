@@ -60,8 +60,16 @@ import { useHead } from '@unhead/vue'
 const { t } = useI18n()
 
 // 设置页面标题
-useHead({
-  title: t('about.page.title'),
+watchEffect(() => {
+  useHead({
+    title: t('about.page.title'),
+    link: [
+      { 
+        rel: 'stylesheet', 
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' 
+      }
+    ]
+  })
 })
 
 const values = [

@@ -30,13 +30,16 @@ import { useI18n } from 'vue-i18n' // 确保导入正确的模块路径
 
 const { t , locale} = useI18n()
 
-useHead({
-  title: locale.value === 'zh-CN' ? '霖冬笔记' :
-        locale.value === 'zh-HK' ? '霖冬笔记' :
-        locale.value === 'zh-MO' ? '霖冬笔记' :
-        locale.value === 'zh-TW' ? '霖冬笔记' :
-        '霖冬笔记'
-        
+watchEffect(() => {
+  useHead({
+    title: t('home.page.title'),
+    link: [
+      { 
+        rel: 'stylesheet', 
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' 
+      }
+    ]
+  })
 })
 
 const features = [
